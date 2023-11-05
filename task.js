@@ -9,10 +9,6 @@ function getArrayParams(...arr) {
   return ({min: min, max: max,avg: avg});
 }
 getArrayParams(154,152,800);
-   
-
-  return { min: min, max: max, avg: avg };
-}
 
 function summElementsWorker(...arr) {
 
