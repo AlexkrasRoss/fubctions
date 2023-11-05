@@ -6,14 +6,18 @@ function getArrayParams(...arr) {
   avg = Number(avg.toFixed(2));
   let min = Math.min(...arr);
   let max = Math.max(...arr);
-  return ({min: min, max: max,avg: avg});
+  return ({min: min, max: max, avg: avg});
 }
-getArrayParams(154,152,800);
+getArrayParams(1,2,3,-100,10);
 
 function summElementsWorker(...arr) {
+  let initialValue = 0;
+let sum = arr.reduce(
+    (valueAccumulator, arr) => valueAccumulator + arr, initialValue);
+   return ({sum: sum});
+ }
+ summElementsWorker(-10,53,-40)
 
-
-}
 
 function differenceMaxMinWorker(...arr) {
 
