@@ -20,7 +20,9 @@ let sum = arr.reduce(
 
 
 function differenceMaxMinWorker(...arr) {
-
+  let min = Math.min(...arr);
+  let max = Math.max(...arr);
+  return ({min: min, max: max});
 }
 
 function differenceEvenOddWorker(...arr) {
