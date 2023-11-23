@@ -13,14 +13,8 @@ console.log(getArrayParams(1,2,3,-100,10));
 
 // ЗАДАЧА №2
 function summElementsWorker(...arr) {
-  // Способ 1
-let sum = arr.reduce((i, arr) => i + arr, 0);
-   return ({sum: sum});
-
-    // Способ 2
-  // let sum = 0;
-  // arr.map((array) => sum += array);
-  //   return ({sum: sum});
+ let sum = arr.reduce((i, a) => i + a, 0);
+   return sum;
    }
    console.log(summElementsWorker(10, 10, 11, 20, 10));
 
@@ -59,17 +53,23 @@ function averageEvenElementsWorker(...arr) {
       if (arr[i] % 2 === 0)
         sumEventElement.push(arr[i]);
   }
-    let sum = sumEventElement.reduce((i, arr) => i + arr, 0);
+    let sum = sumEventElement.reduce((i, a) => i + a, 0);
     countEvenElement =(arr.length ? sum / sumEventElement.length : 0);
     // countEvenElement=Number(countEvenElement.toFixed(2))
     console.log( sumEventElement,countEvenElement);
   }; 
   (averageEvenElementsWorker(1, 2, 3, 4, 5, 6, 7, 8, 9));
 
-summElementsWorker(1,3,4,5,37);
 
-
-
-function makeWork (arrOfArr, func) {
-
-}
+  const arr = [[10, 10, 11, 20, 10], [67, 10, 2, 39, 88], [72, 75, 51, 87, 43], [30, 41, 55, 96, 62]];
+  function makeWork (arrOfArr, func){
+    let maxWorkerResult = -Infinity;
+      for (i=0; i < arrOfArr.length;i++){
+      maxWorkerResult = arrOfArr[i];
+      }
+       if (maxWorkerResult > func){
+      func = maxWorkerResult; 
+         }
+      console.log(func);
+  };
+  makeWork(arr, summElementsWorker(...arr));
